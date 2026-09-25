@@ -3,7 +3,7 @@ import argparse
 
 from openai import OpenAI
 from dotenv import load_dotenv
-from systemprompts.prompts import system_prompt
+from prompts import system_prompt
 
 load_dotenv()
 api_key = os.environ.get("OPENROUTER_API_KEY")
