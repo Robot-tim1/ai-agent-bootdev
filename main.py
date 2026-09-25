@@ -3,6 +3,7 @@ import argparse
 
 from openai import OpenAI
 from dotenv import load_dotenv
+from systemprompts.prompts import system_prompt
 
 load_dotenv()
 api_key = os.environ.get("OPENROUTER_API_KEY")
@@ -22,6 +23,7 @@ def main():
     args = parser.parse_args()
 
     messages = [
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": args.prompt,},
         ]
     response = generate_content(messages)
